@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #fadd5c;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 20px;
+    width: 100%;
+    background-color: transparent;
+    display: flex;
+    z-index: 100;
+}
+
+
+.kembali {
+    position: relative;
+    width: 120px;
+    background: #ffffff;
+    border-radius: 3px;
+    margin-top: 15px;
+    margin-left: 15px;
+    text-align: center;
+    padding: 10px;
+}
+
+.kembali:hover {
+    background: #111111;
+    transition: .4s;
+}
+
+.kembali a {
+    color: rgb(231, 8, 8);
+    font-size: 20px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.kembali:hover a {
+    color: #0ffa07;
+    transition: .4s;
+}
+
+.box {
+    margin-top: 4%;
+    position: relative;
+    width: 400px;
+    height: 680px;
+    background: black;
+    border-radius: 8px;
+}
+
+.box:hover {
+    border: 5px solid rgb(5, 21, 245);
+    box-shadow: 0 0 20px rgb(5, 21, 245), inset 0 0 20px rgb(5, 21, 245);
+}
+
+.box form {
+    position: absolute;
+    inset: 5px;
+    background: rgb(224, 178, 28);
+    padding: 20px 40px;
+    border-radius: 8px;
+    z-index: 2;
+    flex-direction: column;
+}
+
+.box h2 {
+    color: #000000;
+    font-weight: 800;
+    text-align: center;
+}
+
+.box:hover h2 {
+    color: rgb(5, 21, 245);
+}
+
+@media (max-width:750px){
+    header {
+        position: absolute;
+        left: 0px;
+    }
+
+    .box {
+        top: 80px;
+        width: 340px;
+        height: 680px;
+    }
+
+    .box:hover {
+        border: none;
+        box-shadow: 0 0 20px black, inset 0 0 20px black;
+    }
+
+    .box:hover h2 {
+        color: black;
+    }
+}
+
+.input-box {
+    position: relative;
+    margin: 25px 0;
+}
+
+.input-box input {
+    width: 100%;
+    height: 40px;
+    background: transparent;
+    border: 3px solid black;
+    outline: none;
+    border-radius: 10px;
+    font-size: 14px;
+    color: black;
+    padding: 0 15px;
+    transition: .5s ease;
+}
+
+.input-box input:focus,
+.input-box input:valid {
+    background: #eee;
+    border: 4px solid #0ef;
+}
+
+.input-box label {
+    position: absolute;
+    left: 20px;
+    transform: translateY(-50%);
+    color: black;
+    pointer-events: none;
+    top: 1px;
+    font-size: .8em;
+    background: rgb(224, 178, 28);
+    padding: 0 6px;
+    transition: .5s ease;
+}
+
+.input-box input:focus~label,
+.input-box input:valid~label {
+    top: -10px;
+    background: transparent;
+    left: 2px;
+}
+
+.gender-box {
+    position: relative;
+    margin-top: -12px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.gender-box label {
+    font-size: 16px;
+    padding: 0 8px;
+}
+
+.radio-box input {
+    width: 10%;
+    height: 15px;
+    accent-color: red;
+    margin-bottom: 25px;
+}
+
+.radio-box label {
+    font-size: 16px;
+}
+
+.role-box {
+    width: 100%;
+    height: 43px;
+    padding-left: 10px;
+    margin-top: -8px;
+    background: transparent;
+    border-radius: 10px;
+    border: 3px solid black;
+    outline: none;
+    font-size: 14px;
+    color: black;
+    cursor: pointer;
+}
+
+.role-box:focus,
+.role-box:valid {
+    background: #eee;
+    border: 3px solid #0ef;
+}
+
+.btn {
+    width: 100%;
+    margin-top: 6px;
+    height: 45px;
+    background: #0ef;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    color: black;
+    font-weight: 700;
+    
+}
+
+.btn:hover {
+    background: rgb(3, 245, 23);
+    color: white;
+}

@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to right, #31e9e9, #5578e9);
+    color: #000;
+}
+
+.container {
+    margin: 0 15px;
+}
+
+.form-box {
+    position: relative;
+    width: 100%;
+    max-width: 450px;
+    padding: 30px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: none;
+}
+
+.form-box.active {
+    display: block;
+}
+
+h2 {
+    font-size: 34px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 12px;
+    background: #d4d3d3;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: #000;
+    margin-bottom: 20px;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background: #7494ec;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 500;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    transition: 0.5s;
+}
+
+.login {
+    margin-top: 25px;
+}
+
+button:hover {
+    background: #204dc9;
+}
+
+p {
+    font-size: 14.5px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+p a {
+    font-weight: 500;
+    color: #325dd4;
+    text-decoration: none;
+}
+
+.forgot {
+    position: absolute;
+    font-size: 15px;
+    margin-top: -10px;
+    margin-left: 5px;
+    font-weight: 500;
+    color: #cf190c;
+    text-decoration: none;
+}
+
+p a:hover, .forgot:hover {
+    text-decoration: underline;
+}
+
+.error-message {
+    padding: 12px;
+    background: #f8d7da;
+    border-radius: 6px;
+    font-size: 16px;
+    color: #d61125;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.far{
+    position: absolute;
+    right: 45px;      
+    margin-top: -43px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 18px;
+}
+
+@media (max-width:450px){
+    .change {
+        font-size: 28px;
+    }
+}

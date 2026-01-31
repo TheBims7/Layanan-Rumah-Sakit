@@ -1,0 +1,421 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #fefefe;
+    line-height: 1;
+}
+  
+header {
+    position: fixed;
+    padding: 1rem 2rem;
+    background: #4CAF50;
+    color: white;
+    width: 100%;
+    z-index: 100;
+}
+  
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav h1 {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+nav span {
+    color: rgb(240, 9, 9);
+}
+  
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: red;
+}
+
+.menu-icon {
+    display: none;
+}
+
+.menu-icon i{
+    color: white;
+    font-size: 30px;
+}
+
+@media (max-width:1000px) {
+    header {
+        padding: 1rem 1rem;
+    }
+    nav h1 {
+        font-size: 25px;
+    }
+    nav ul {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        align-items: normal;
+        background: #4CAF50;
+        gap: 0;
+        overflow: hidden;
+    }
+    nav ul li {
+        padding: 10px 20px;
+    }
+    .menu-icon {
+        display: block;
+    }
+    #menuList{
+        transition: all 0.5s;
+    }
+    header.active {
+        padding-bottom: 2rem;
+    }
+}
+
+.home {
+    background: url('../Images/img.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 38rem;
+}
+
+.label {
+    position: absolute;
+    width: 55%;
+    height: 38rem;
+    padding: 14rem 2rem;
+    color: white;
+    font-size: 23px;
+    font-weight: 800;
+    background: rgba(0, 38, 255, 0.671);
+    clip-path: polygon(0 0, 100% 0, 75% 100%, 0% 100%);
+}
+
+@media (max-width:600px){
+    .home {
+        height: 25rem;
+    }
+
+    .label {
+        padding: 12rem 1rem;
+        font-size: 18px;
+        width: 100%;
+        height: 25rem;
+        clip-path: none;
+        text-align: center;
+        background: rgba(0, 38, 255, 0.514);
+    }
+}
+
+.service {
+    background: #e8f5e9;
+    width: 100%;
+    padding: 80px 0px;
+}
+
+.box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    min-height: 480px;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        scale: 0.5;
+    }
+    to {
+        opacity: 1;
+        scale: 1;
+    }
+}
+
+.card {
+    height: 380px;
+    width: 360px;
+    padding: 20px 35px;
+    background: #191919;
+    border-radius: 20px;
+    margin: 15px;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    animation: appear 5s linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+}
+
+.img {
+    margin-top: 40px;
+    margin-bottom: 50px;
+    height: 150px;
+    width: auto;
+}
+
+.menu a {
+    text-align: center;
+    color: #fcfc;
+    font-size: 25px;
+    line-height: 27px;
+    margin-bottom: 25px;
+    text-align: center;
+    margin-left: 20px;
+}
+
+.history a {
+    text-align: center;
+    color: #fcfc;
+    font-size: 20px;
+    line-height: 27px;
+    margin-bottom: 25px;
+    text-align: center;
+    margin-left: 20px;
+}
+
+.card .button {
+    background-color: #f10c0c;
+    color: white;
+    text-decoration: none;
+    border: none;
+    font-weight: bold;
+    padding: 15px 25px;
+    width: 250px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    transition: .4s;
+}
+
+.card .button:hover {
+    background-color: #4CAF50;
+    cursor: pointer;
+}
+
+.about {
+    width: 100%;
+    padding: 100px 0px;
+    background-color: rgb(31, 29, 29);
+}
+
+.about .profil {
+    margin: 10px 30px;
+    text-align: justify;
+    font-size: 20px;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+    color: white;
+}
+
+.profil h2 {
+    font-size: 50px;
+    color: #4CAF50;
+    margin-bottom: 50px;
+}
+
+.profil h3 {
+    margin-bottom: 10px;
+}
+
+.profil p {
+    margin-bottom: 30px;
+}
+
+.profil ul {
+    margin-left: 30px;
+    margin-bottom: 30px;
+}
+
+.profil li {
+    margin-bottom: 5px;
+}
+
+.misi {
+    list-style: decimal;
+}
+
+@media (max-width:600px){
+    .card {
+        width: 340px;
+    }
+
+    .menu a {
+        margin-left: 10px;
+    }
+
+    .history a {
+        margin-left: 10px;
+    }
+
+    .about {
+        padding-top: 50px;
+        margin-bottom: -50px;
+    }
+
+    .about .profil {
+        font-size: 13px;
+        text-align: left;
+    }
+    .profil h2 {
+        font-size: 30px;
+        text-align: left;
+    }
+
+    .profil ul {
+        margin-left: 20px;
+    }
+
+    footer i, ion-icon{
+        font-size: 15px; 
+    }
+
+    footer a {
+        margin-left: 35px;
+        font-size: 13px;
+    }
+}
+
+footer {
+    padding: 1rem 1rem;
+    background: #4CAF50;
+    color: white;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+footer i, ion-icon{
+    display: flex;
+    color: black;
+    font-size: 25px;
+    letter-spacing: 1.5px;
+    margin-top: 3px;
+    font-weight: bold;
+}
+
+footer a{
+    color: white;
+    font-size: 20px;
+    letter-spacing: 1.5px;
+    display: flex;
+    margin-top: 4px;
+    margin-left: 6px;
+    margin-right: 50px;
+    font-weight: bold;
+}
+
+a.logout {
+    cursor: pointer;
+}
+
+#popup {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+#popup-content {
+    background-color: white;
+    width: 400px;
+    margin: 250px auto;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #333;
+}
+
+#popup-content p {
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#popup-content button {
+    padding: 10px 22px;
+    margin: 10px;
+    border: none;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+#popup-content button:hover {
+    box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+    transform: translateY(-5px);
+}
+
+.btn-yes {
+    background-color: #0ce20c;
+    color: white;
+}
+
+.btn-no {
+    background-color: #f00b0b;
+    color: white;
+}
+
+@media (max-width:1180px){
+    footer{
+        display: block;
+    }
+
+    footer i, ion-icon{
+        position: absolute;
+        left: 20px; 
+        font-size: 20px; 
+        margin-top: 4px;
+    }
+
+    footer a {
+        margin-left: 35px;
+        font-size: 18px;
+    }
+}
+
+@media (max-width:1180px){
+    #popup-content {
+        width: 300px;
+    }
+
+    #popup-content p {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    #popup-content button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+}

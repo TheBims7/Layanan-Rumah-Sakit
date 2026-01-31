@@ -1,0 +1,123 @@
+<?php
+session_start();
+if (!isset($_SESSION['username'])) {
+    header("Location: index.php");
+    exit();
+}
+
+require_once __DIR__ . '/../database.php';
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="CSS/dashboard_admin.css">
+</head>
+<body class="bg-gray-100">
+    <!-- Header -->
+    <header class="header text-white h-16 shadow-md fixed w-full z-20">
+        <div class="flex items-center h-full px-4">
+            <button id="sidebarToggle" class="hamburger active mr-4 text-white focus:outline-none">
+                <div class="w-6 space-y-1.5">
+                    <span class="block h-0.5 bg-white"></span>
+                    <span class="block h-0.5 bg-white"></span>
+                    <span class="block h-0.5 bg-white"></span>
+                </div>
+            </button>
+            <h1 class="title text-xl font-bold flex-grow">Welcome, <span><?= $_SESSION['username']; ?></span> Your Admin</h1>
+            
+            <div class="flex items-start justify-between">
+                <div class="relative group">
+                    <div class="cursor-pointer text-white">
+                        <span class="font-medium">Admin</span>
+                    </div>
+                    <div class="absolute right-0 top-full w-48 bg-white rounded-md shadow-lg hidden group-hover:block">
+                        <a href="ganti_password.php" class="text-blue-600 px-4 py-2 block"><i class="fas fa-key mr-2"></i>Ganti Password</a>
+                        <div class="border-t border-gray-200"></div>
+                        <a href="#" class="text-red-600 px-4 py-2 block" data-bs-toggle="modal" data-bs-target="#logoutModal"><i class="fas fa-sign-out-alt mr-2"></i>Logout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="logoutModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold" id="logoutModalLabel">Konfirmasi Logout</h5>
+                </div>
+                <div class="modal-body">
+                    Apakah kamu yakin ingin logout?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">No</button>
+                    <a href="../logout.php" class="btn btn-success">Yes</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sidebar -->
+    <div class="sidebar text-white">
+        <div class="overflow-y-auto h-[calc(100vh-64px)]">
+            <div class="py-2">
+                <a href="dashboard_admin.php" class="menu-item flex items-center px-4 py-3 text-gray-300 hover:bg-gray-800">
+                    <span class="ml-3">Dashboard</span>
+                </a>
+                
+                <a href="data_dokter.php" class="menu-item flex items-center px-4 py-3 text-gray-300 hover:bg-gray-800">
+                    <span class="ml-3">Data Dokter</span>
+                </a>
+
+                <a href="data_poli.php" class="menu-item flex items-center px-4 py-3 text-gray-300 hover:bg-gray-800">
+                    <span class="ml-3">Data Poliklinik</span>
+                </a>
+
+                <a href="akun.php" class="menu-item flex items-center px-4 py-3 text-gray-300 hover:bg-gray-800">
+                    <span class="ml-3">Daftar Akun</span>
+                </a>
+
+                <a href="login.php" class="menu-item flex items-center px-4 py-3 text-gray-300 hover:bg-gray-800">
+                    <span class="ml-3">Aktivitas Login</span>
+                </a>
+
+                <a href="aktivitas.php" class="menu-item flex items-center px-4 py-3 text-gray-300 hover:bg-gray-800">
+                    <span class="ml-3">Aktivitas</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="content">
+        <!-- Profile Box -->
+        <div class="profile-box p-6 rounded-lg shadow-sm mb-6">
+            <div>
+                <h2 class="profil text-2xl font-bold text-black-800 mb-8">Profil Admin</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <p class="text-sm font-bold text-black-500">Username</p>
+                        <p class="text-black-900"><?php echo $_SESSION['username']?></p>
+                    </div>
+                    <div>
+                        <p class="text-sm font-bold text-black-500">Email</p>
+                        <p class="text-black-900"><?php echo $_SESSION['email']?></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="edit">
+            <button onclick="window.location.href='edit_profil.php'">Edit Pofil</button>
+        </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="Javascript/edit.js"></script>
+</body>
+</html>
