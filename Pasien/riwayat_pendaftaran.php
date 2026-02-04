@@ -117,7 +117,7 @@ if (isset($_GET['id'])) {
                                 <i class="fas fa-eye"></i>
                                 <span class="tulisan">Detail</span>
                             </button>
-                            <button class="hapus" onclick="showPopup()">
+                            <button class="hapus" onclick="showPopup(<?= $row['id'] ?>)">
                                 <i class="fas fa-trash"></i>
                                 <span class="tulisan">Hapus</span>
                             </button>
@@ -150,7 +150,7 @@ if (isset($_GET['id'])) {
         <div id="popup-content">
             <p>Yakin ingin menghapus data ini?</p>
             <button class="btn-no" onclick="hidePopup()">Batal</button>
-            <button class="btn-yes" onclick="confirmDelete(<?= $row['id'] ?>)">Ya, Hapus</button>
+            <button class="btn-yes" onclick="confirmDelete()">Ya, Hapus</button>
         </div>
     </div>
     
@@ -160,4 +160,5 @@ if (isset($_GET['id'])) {
     </script>
     <script src="JS/riwayat_pendaftaran.js"></script>
 </body>
+
 </html>
