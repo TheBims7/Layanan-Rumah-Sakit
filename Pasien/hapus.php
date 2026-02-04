@@ -4,7 +4,7 @@ include("../database.php");
 
 if( isset($_GET['id']) ){
 
-    $id = $_GET['id'];
+    $id = (int) $_GET['id'];
 
     $sql = "DELETE FROM pendaftaran WHERE id=$id";
     $query = mysqli_query($conn, $sql);
@@ -18,5 +18,6 @@ if( isset($_GET['id']) ){
 } else {
     die("akses dilarang...");
 }
+
 
 ?>
