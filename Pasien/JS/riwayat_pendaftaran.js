@@ -1,3 +1,5 @@
+let deleteId = null;
+
 function openModal(id) {
 const data = registrations.find(row => row.id == id);
 if (data) {
@@ -44,38 +46,42 @@ if (data) {
 }
 
 function escapeHtml(text) {
-const div = document.createElement('div');
-div.textContent = text;
-return div.innerHTML;
+    const div = document.createElement('div');
+    div.textContent = text;
+    return div.innerHTML;
 }
 
 function closeModal() {
-document.getElementById("detailModal").classList.remove("show");
+    document.getElementById("detailModal").classList.remove("show");
 }
 
-function confirmDelete(id) {
-window.location.href = 'hapus.php?id=' + id;
+function confirmDelete() {
+    if (deleteId) {
+        window.location.href = 'hapus.php?id=' + deleteId;
+    }
 }
 
-function showPopup() {
-document.getElementById('popup').style.display = 'block';
+function showPopup(id) {
+    deleteId = id;
+    document.getElementById('popup').style.display = 'block';
 }
 
 function hidePopup() {
-document.getElementById('popup').style.display = 'none';
+    document.getElementById('popup').style.display = 'none';
+    deleteId = null;
 }
 
 // Tutup modal jika klik di luar
 window.onclick = function(event) {
-const modal = document.getElementById("detailModal");
-if (event.target === modal) {
-    closeModal();
-}
+    const modal = document.getElementById("detailModal");
+    if (event.target === modal) {
+        closeModal();
+    }
 }
 
 // Tutup modal dengan ESC key
 document.addEventListener('keydown', function(event) {
-if (event.key === 'Escape') {
-    closeModal();
-}
+    if (event.key === 'Escape') {
+        closeModal();
+    }
 });
